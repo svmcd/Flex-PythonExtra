@@ -2,18 +2,18 @@ import re
 
 emails = []
 
-with open("dummy.txt", "r") as bestand:
+with open("/Users/samed/Documents/Mediacollege/Bewijzenmap/Jaar 1/periode 1/Flex lessen/Flex-PythonExtra/04-Tekst/code/emailsTekst.txt", "r") as bestand:
 
     regel = bestand.readline()
 
     while regel:
 
-        patroon = r"..." # juiste regular expression voor email hier invullen
+        patroon = r"[^@]+@[^@]+\.[^@]+"
 
-        gevonden = re.findall(...) # juiste code hier invullen
+        gevondenEmails = re.findall(patroon, regel)
 
-        ... # alle gevonden emails aan de email list toevoegen
+        emails.extend(gevondenEmails)
 
-        regel = bestand.readline() # volgende regel lezen
+        regel = bestand.readline() 
 
 print(emails)
